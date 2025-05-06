@@ -9,6 +9,7 @@
 body{
     background: #1E1E1E;
     color: #fff;
+    overflow-x: hidden;
 
 }
 
@@ -19,6 +20,13 @@ body{
     margin: 0px auto;
 }
 
+.title-text{
+    font-family: "Barlow", sans-serif;
+    font-weight: 600;
+    font-size: 40px;
+    letter-spacing: 2px;
+}
+
 /*  */
 
 header{
@@ -26,6 +34,9 @@ header{
     display: flex;
     flex-direction: row;
     align-items: center;
+    /* position: fixed;
+    z-index: 1000; */
+
 }
 
 .icon-section img {
@@ -126,4 +137,256 @@ main {
 
 .graphics img {
     width: 800px;
+}
+
+/* algorithm-css */
+.algo-main{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+}
+
+.algo-name{
+    display: flex;
+    height: 80px;
+    width: 100%;
+    border-top: 4px solid #353333;
+    border-bottom: 4px solid #353333;
+    align-items: center;
+    justify-content: center;
+}
+
+.algo-name h1{
+    font-family: "Barlow", sans-serif;
+    font-weight: 500px;
+    font-size: 45px;
+}
+
+/* middel item in the algoritm control panel */
+.algo-section{
+    display: flex;
+}
+.left-div{
+    width: 20%;
+    height: 80vh;
+    border-right: 4px solid #353333;
+}
+
+.left-div li{
+
+    list-style: none;
+    padding: 20px 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-family: "Barlow", sans-serif;
+    border-bottom: 4px solid #353333;
+    
+}
+
+.left-div li a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 30px;
+    padding: 10px 20px;
+    font-weight: 400;
+
+}
+
+.left-div li a:hover{
+    color: #FDA54C;
+    animation: zoom-in 1s;
+    transform: scale(1.1);
+    
+}
+
+@keyframes zoom-in {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.1);
+    }
+    
+}
+
+
+/* Value section start */
+.value-div
+{
+    width: 20%;
+    height: 80vh;
+    border-left: 4px solid #353333;
+    flex-direction: column;
+    justify-items: center;
+    
+}
+
+.value-div h1{
+    display: flex;
+    margin: 20%;
+    /* border: 1px solid #fff; */
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+
+}
+
+.value-input{
+    
+    /* margin-left:40px; */
+    width: 300px;
+    height: 60px;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 10px;
+    border: 0.5px solid #FDA54C;
+    background: #9D9595;
+    
+  
+}
+
+.start-button{
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: #fff;
+    border: 2px solid #FDA54C;
+    background-color: #534A4A;
+    margin-top: 40px;
+    height: 60px;
+    width: 240px;
+    border-radius: 60px;
+    display: block;
+}
+
+.random-reset{
+    display: flex;
+    margin-top: 40px;
+    /* justify-content: space-between; */
+    /* border: 1px solid #fff; */
+   
+}
+
+.random-reset button{
+    align-items: center;
+    font-size: 20px;
+    color: #fff;
+    border: 2px solid #FDA54C;
+    background-color: #534A4A;
+    height: 50px;
+    width: 120px;
+    border-radius: 25px;
+    margin: 0px 20px;
+}
+
+
+/* End of value section */
+
+/* algorithm canvas start*/
+.canvas-div{
+    /* border: 1px solid #fff; */
+    width: 60%;
+    height: 80vh;
+    justify-content: center;
+    align-content: center;
+
+}
+
+.bfscanvas{
+    background: #f0f0f0;
+      display: block;
+      margin: 20px auto;
+      border: 1px solid #ccc;
+}
+/* algorithm canvas end*/
+
+/* About-us css */
+.about-us{
+    display: flex;
+    flex-direction:column;
+}
+
+/* description section div design */
+.byte-infomation-text{
+    display: flex;
+    flex-direction:row;
+    justify-content: space-between;
+    width:  100%;
+    height:  auto;
+    /* border: 1px solid #fff; */
+    margin-top: 50px;
+
+}
+.about-byte h1{
+    font-style: normal;
+    margin-bottom: 50px;
+}
+
+.byte-icon img{
+    width: 580px;
+    height:580px;
+    margin-top: 50px;
+}
+/* supervisor data section */
+.supervisor{ 
+    display: flex;
+    flex-direction:column;
+    /* border: 1px solid #fff; */
+    width:  100%;
+    height:  auto;
+}
+.supervisor-title{
+    margin-bottom: 50px;
+}
+
+.supervisor-title h1{
+    
+    font-style: normal;
+    font-size: 60px;
+    font-weight: 500;
+    margin-bottom: 50px;
+    /* border: 1px solid #fff; */
+
+}
+/* details section of supervisor */
+.supervisor-details{
+    display:flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    /* border: 1px solid #fff; */
+    align-items: center;
+}
+
+.supervisor-img img{
+    width:250px;
+    height:250px;
+    border-radius: 50%;
+    margin-right: 50px;
+}
+
+.supervisor-img:hover{
+    transform: scale(1.05);
+    animation: zoom-in 1s;
+}
+
+.supervisor-text h2{
+    margin: 0px;
+   
+}
+.supervisor-text p{
+    margin-top: 0px;
+}
+/* team information */
+
+.team-information{
+    display: flex;
+    flex-direction: column;
+    width:100%;
+    height: auto;
+    /* border: 1px solid #fff; */
+
 }
