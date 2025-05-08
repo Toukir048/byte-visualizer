@@ -57,3 +57,13 @@ body {
     display: block;
     margin-bottom: 5px;
   }
+
+  .algorithm-container h1 {
+    text-align: center;
+  }
+  .algorithm-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
