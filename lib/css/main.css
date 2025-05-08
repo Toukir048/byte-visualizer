@@ -170,6 +170,17 @@ main {
 }
 
 /* middel item in the algoritm control panel */
+.algorithm-section{
+    width: 90%;
+    height: 80vh;
+    padding: 20px;
+}
+
+.algorithm-section iframe {
+    width: 90%;
+    height: 100%;
+}
+
 .algo-section{
     display: flex;
 }
