@@ -1,0 +1,89 @@
+/* algorithm-css */
+.algo-main{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+}
+
+.algo-name{
+    display: flex;
+    height: 80px;
+    width: 100%;
+    border-top: 4px solid #353333;
+    border-bottom: 4px solid #353333;
+    align-items: center;
+    justify-content: center;
+}
+
+.algo-name h1{
+    font-family: "Barlow", sans-serif;
+    font-weight: 500px;
+    font-size: 45px;
+}
+
+/* middel item in the algoritm control panel */
+.algorithm-section{
+    width: 90%;
+    height: 80vh;
+    padding: 20px;
+}
+
+.algorithm-section iframe {
+    width: 90%;
+    height: 100%;
+}
+
+.algo-section{
+    display: flex;
+}
+.left-div{
+    width: 20%;
+    height: 80vh;
+    border-right: 4px solid #353333;
+}
+
+.left-div li{
+
+    list-style: none;
+    padding: 20px 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-family: "Barlow", sans-serif;
+    border-bottom: 4px solid #353333;
+    
+}
+
+.left-div li a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 30px;
+    padding: 10px 20px;
+    font-weight: 400;
+
+}
+
+.left-div li a:hover{
+    color: #FDA54C;
+    animation: zoom-in 1s;
+    transform: scale(1.1);
+}
+
+.activated{
+    color: #FDA54C !important;
+    transform: scale(1.1);
+}
+
+@keyframes zoom-in {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.1);
+    }
+    
+}
+
+

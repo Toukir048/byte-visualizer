@@ -1,0 +1,88 @@
+
+/* About-us css */
+.about-us{
+    display: flex;
+    flex-direction:column;
+}
+
+/* description section div design */
+.byte-infomation-text{
+    display: flex;
+    flex-direction:row;
+    justify-content: space-between;
+    width:  100%;
+    height:  auto;
+    /* border: 1px solid #fff; */
+    margin-top: 50px;
+
+}
+.about-byte h1{
+    font-style: normal;
+    margin-bottom: 50px;
+}
+
+.byte-icon img{
+    width: 580px;
+    height:580px;
+    margin-top: 50px;
+}
+/* supervisor data section */
+.supervisor{ 
+    display: flex;
+    flex-direction:column;
+    /* border: 1px solid #fff; */
+    width:  100%;
+    height:  auto;
+}
+.supervisor-title{
+    margin-bottom: 50px;
+}
+
+.supervisor-title h1{
+    
+    font-style: normal;
+    font-size: 60px;
+    font-weight: 500;
+    margin-bottom: 50px;
+    /* border: 1px solid #fff; */
+
+}
+/* details section of supervisor */
+.supervisor-details{
+    display:flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    /* border: 1px solid #fff; */
+    align-items: center;
+}
+
+.supervisor-img img{
+    width:250px;
+    height:250px;
+    border-radius: 50%;
+    margin-right: 50px;
+}
+
+.supervisor-img:hover{
+    transform: scale(1.05);
+    animation: zoom-in 1s;
+}
+
+.supervisor-text h2{
+    margin: 0px;
+   
+}
+.supervisor-text p{
+    margin-top: 0px;
+}
+/* team information */
+
+.team-information{
+    display: flex;
+    flex-direction: column;
+    width:100%;
+    height: auto;
+    /* border: 1px solid #fff; */
+
+}
