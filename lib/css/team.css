@@ -74,9 +74,70 @@
 }
 
 .team-information{
+    margin-top: 50px;
     display: flex;
     flex-direction: column;
     width:100%;
     height: auto;
 
+}
+
+.text-center{
+    text-align: center;
+}
+
+/* Meet The Team section! */
+
+.team-container{
+    width: 100%;
+    padding: 5px;
+}
+
+.grid-3{
+    margin: 10px 0px ;
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+.team-grid div{
+    margin: 0px auto;
+    padding: 20px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #fda44c8f;
+    width: 70%;
+    border-radius: 10px;
+}
+
+.team-grid div img{
+    width:250px;
+    height:250px;
+    border-radius: 5px;
+}
+
+.team-grid div h2{
+    margin: 20px 0px;
+    font-family: "Barlow", sans-serif;
+    font-weight: 600;
+    font-size: 2rem;
+    /* font-style: italic; */
+}
+
+.team-grid div p{
+    font-size: 1.2rem;
+}
+
+
+.team-grid-down{
+    margin: 10px 0px ;
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.grid-2{
+    width: 65%;
+    display: grid;
+    grid-template-columns: auto auto;
+    margin: 30px auto;
 }
