@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HOME | Byte-Visualizer</title>
-    <link rel="stylesheet" href="./lib/css/main.css">
+    <link rel="stylesheet" href="lib/css/main.css">
+    <link rel="stylesheet" href="./lib/css/algo.css">
 </head>
 
 <body>
@@ -29,26 +30,31 @@
         <section class="algo-section">
             <div class="left-div">
                 <ul>
-                    <li><a href="#" onclick="loadAlgorithm('bubble-sort.html')">BUBBLE SORT</a></li>
-                    <li><a href="#" onclick="loadAlgorithm('merge-sort.html')">MERGE SORT</a></li>
-                    <li><a href="#" onclick="loadAlgorithm('bfs.html')">BFS</a></li>
-                    <li><a href="#" onclick="loadAlgorithm('dfs.html')">DFS</a></li>
+                    <li><a href="#" class="activated" onclick="loadAlgorithm('bubble-sort.html', this)">BUBBLE SORT</a></li>
+                    <li><a href="#" onclick="loadAlgorithm('merge-sort.html', this)">MERGE SORT</a></li>
+                    <li><a href="#" onclick="loadAlgorithm('bfs.html', this)">BFS</a></li>
+                    <li><a href="#" onclick="loadAlgorithm('dfs.html', this)">DFS</a></li>
                 </ul>
             </div>
 
             <div class="algorithm-section">
-                <iframe id="algoFrame" src="http://127.0.0.1:5500/algorithms/bfs.html" scrolling="no" frameborder="0"></iframe>
+                <iframe id="algoFrame" src="./algorithms/bfs.html" scrolling="no" frameborder="0"></iframe>
             </div>
         </section>
     </main>
 
     <script>
-        function loadAlgorithm(algoName) {
+        function loadAlgorithm(algoName, clicked) {
             const iframe = document.getElementById('algoFrame');
-            iframe.src = `http://127.0.0.1:5500/algorithms/${algoName}`;
+            iframe.src = `./algorithms/${algoName}`;
             document.querySelector('.algo-name h1').textContent = algoName.replace('.html', '').toUpperCase();
+            // For the Active Class: 
+            const links = document.querySelectorAll('.left-div a');
+            links.forEach(link => {
+                link.classList.remove('activated');
+            });
+            clicked.classList.add('activated');            
         }
     </script>
 </body>
-
 </html>
