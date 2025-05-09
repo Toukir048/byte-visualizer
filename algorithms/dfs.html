@@ -3,14 +3,14 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>BFS Tree Animation</title>
-  <link rel="stylesheet" href="../lib/css/bfs.css">
+  <title>DFS Tree Animation</title>
+  <link rel="stylesheet" href="../lib/css/dfs.css">
 </head>
 
 <body>
 
   <div class="algorithm-container">
-    <h1>BFS Tree Animation</h1>
+    <h1>DFS Tree Animation</h1>
     <div class="algorithm-flex">
       <canvas id="treeCanvas" width="1200" height="500"></canvas>
       <div class="controls">
@@ -18,7 +18,7 @@
         <input type="text" id="inputTree" placeholder="Enter tree like: 0:1,2; 1:3; 2:4,5"> </input> <br>
         <div class="button-group">
           <button onclick="buildTree()">Build Tree</button>
-          <button onclick="startBFS()">Start BFS</button>
+          <button onclick="startDFS()">Start DFS</button>
         </div>
       </div>
     </div>
@@ -27,14 +27,13 @@
 
   <script>
     const canvas = document.getElementById('treeCanvas');
-
     const ctx = canvas.getContext('2d');
 
     let nodes = [];
     let nodeMap = new Map();
     let visited = new Set();
-    let bfsOrder = [];
-    let queue = [];
+    let dfsOrder = [];
+    let stack = [];
 
     function parseInputTree() {
       const input = document.getElementById('inputTree').value;
@@ -101,7 +100,7 @@
       for (let node of nodes) {
         ctx.beginPath();
         ctx.arc(node.x, node.y, 25, 0, 2 * Math.PI);
-        if (bfsOrder.includes(node.id)) {
+        if (dfsOrder.includes(node.id)) {
           ctx.fillStyle = "#4CAF50"; // visited
         } else {
           ctx.fillStyle = "#999";
@@ -121,35 +120,35 @@
       }
     }
 
-    async function startBFS() {
+    async function startDFS() {
       visited.clear();
-      bfsOrder = [];
-      queue = [0];
-      await bfsStep();
+      dfsOrder = [];
+      stack = [0];
+      await dfsStep();
     }
 
-    async function bfsStep() {
-      if (queue.length === 0) {
+    async function dfsStep() {
+      if (stack.length === 0) {
         drawTree();
         return;
       }
 
-      const current = queue.shift();
+      const current = stack.pop();
       if (!visited.has(current)) {
         visited.add(current);
-        bfsOrder.push(current);
+        dfsOrder.push(current);
         drawTree(current);
         await new Promise(res => setTimeout(res, 800));
 
         const children = nodeMap.get(current)?.children || [];
         for (let child of children) {
           if (!visited.has(child)) {
-            queue.push(child);
+            stack.push(child);
           }
         }
       }
 
-      await bfsStep();
+      await dfsStep();
     }
 
     function buildTree() {

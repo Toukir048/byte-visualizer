@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-:root{
+:root {
     --bg-color: #1E1E1E;
     --text-color: #fff;
     --hover-color: #FDA54C;
@@ -15,22 +15,22 @@ body {
     align-items: center;
     justify-content: start;
     font-family: Arial, sans-serif;
-  }
+}
 
-  canvas {
+canvas {
     width: 80%;
     margin: 10px auto;
     display: block;
     background: var(--bg-color);
     border: 1px solid #333;
-  }
+}
 
-  .controls {
+.controls {
     margin: 20px;
     text-align: center;
-  }
+}
 
-  button {
+button {
     padding: 10px 20px;
     margin: 10px 5px;
     background-color: orange;
@@ -39,9 +39,9 @@ body {
     font-weight: bold;
     cursor: pointer;
     border-radius: 5px;
-  }
+}
 
-  input {
+input {
     border: none;
     border-radius: 5px;
     width: 500px;
@@ -49,34 +49,35 @@ body {
     font-size: 14px;
     resize: none;
     margin-top: 10px;
-  }
+}
 
-  .button-group{
+.button-group {
     margin-top: 10px;
-  }
+}
 
-
-  label {
+label {
     display: block;
     margin-bottom: 5px;
-  }
+}
 
-  .algorithm-container{
-    font-family:"Barlow", sans-serif;
-  }
-  .algorithm-container h1 {
+.algorithm-container {
+    font-family: "Barlow", sans-serif;
+}
+
+.algorithm-container h1 {
     text-align: center;
-  }
-  .algorithm-flex {
+}
+
+.algorithm-flex {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 20px;
-  }
+}
 
-  .controls input{
+.controls input {
     width: 210px;
     height: auto;
     border: none;
     font-family: "Barlow", sans-serif;
-  }
+}

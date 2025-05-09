@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Bubble Sort Animation</title>
+  <link rel="stylesheet" href="../lib/css/bubble-sort.css">
+</head>
+
+<body>
+
+  <div class="algorithm-container">
+    <h1>Bubble Sort Animation</h1>
+    <div class="algorithm-flex">
+      <canvas id="sortCanvas" width="1200" height="500"></canvas>
+      <div class="controls">
+        <label>Enter Array: e.g. 5,3,8,4,2</label>
+        <input type="text" id="inputArray" placeholder="Enter array like: 5,3,8,4,2"> </input> <br>
+        <div class="button-group">
+          <button onclick="buildArray()">Build Array</button>
+          <button onclick="startBubbleSort()">Start Bubble Sort</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const canvas = document.getElementById('sortCanvas');
+    const ctx = canvas.getContext('2d');
+
+    let array = [];
+    let sortedOrder = [];
+
+    function parseInputArray() {
+      const input = document.getElementById('inputArray').value;
+      return input.split(',').map(num => parseInt(num.trim())).filter(num => !isNaN(num));
+    }
+
+    function drawArray() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      const barWidth = 40;
+      const spacing = (canvas.width - (barWidth * array.length)) / (array.length + 1);
+
+      for (let i = 0; i < array.length; i++) {
+        ctx.fillStyle = sortedOrder.includes(i) ? "#4CAF50" : "#999";
+        ctx.fillRect(spacing * (i + 1) + barWidth * i, canvas.height - array[i] * 10, barWidth, array[i] * 10);
+        ctx.fillStyle = "#FFF"; // Set text color to white
+        ctx.font = "16px Arial";
+        ctx.textAlign = "center";
+        ctx.textBaseline = "middle";
+        ctx.fillText(array[i], spacing * (i + 1) + barWidth * i + barWidth / 2, canvas.height - array[i] * 10 - 5);
+      }
+    }
+
+    async function startBubbleSort() {
+      sortedOrder = [];
+      for (let i = 0; i < array.length - 1; i++) {
+        for (let j = 0; j < array.length - 1 - i; j++) {
+          if (array[j] > array[j + 1]) {
+            // Swap
+            [array[j], array[j + 1]] = [array[j + 1], array[j]];
+          }
+          drawArray();
+          await new Promise(res => setTimeout(res, 500)); // Delay for visualization
+        }
+        sortedOrder.push(array.length - 1 - i);
+      }
+      drawArray(); // Final draw to show sorted array
+    }
+
+    function buildArray() {
+      array = parseInputArray();
+      drawArray();
+    }
+  </script>
+
+</body>
+
+</html>

@@ -15,131 +15,40 @@
             <img src="./assets/logo.png" alt="">
         </div>
         <ul>
-            <li> <a href="index.html" >HOME</a></li>
+            <li> <a href="index.html">HOME</a></li>
             <li> <a href="#" class="active">ALGORITHMS</a></li>
             <li> <a href="about-us.html">ABOUT US</a></li>
         </ul>
     </header>
-    
+
     <main class="make-center algo-main">
-     <section class="algo-name">
+        <section class="algo-name">
             <h1>BUBBLE SORT</h1>
-     </section>   
+        </section>
 
-    <section class="algo-section">
-        <div class="left-div">
-            <ul>
-                <li><a href="#">BUBBLE SORT</a></li>
-                <li><a href="#">MERGE SORT</a></li>
-                <li><a href="#">BFS</a></li>
-                <li><a href="#">DFS</a></li>
-            </ul>
-        </div>
-        <divc class="algorithm-section">
-          <iframe src="http://localhost:3000/algorithms/bfs.html" scrolling="no" frameborder="0"></iframe>
-        </div>
-    </section>
+        <section class="algo-section">
+            <div class="left-div">
+                <ul>
+                    <li><a href="#" onclick="loadAlgorithm('bubble-sort.html')">BUBBLE SORT</a></li>
+                    <li><a href="#" onclick="loadAlgorithm('merge-sort.html')">MERGE SORT</a></li>
+                    <li><a href="#" onclick="loadAlgorithm('bfs.html')">BFS</a></li>
+                    <li><a href="#" onclick="loadAlgorithm('dfs.html')">DFS</a></li>
+                </ul>
+            </div>
 
+            <div class="algorithm-section">
+                <iframe id="algoFrame" src="http://127.0.0.1:5500/algorithms/bfs.html" scrolling="no" frameborder="0"></iframe>
+            </div>
+        </section>
     </main>
-    
-    
-</body>
-<script>
-    document.querySelectorAll('.left-div ul li a').forEach(link => {
-        link.addEventListener('click', function(event) {
-            event.preventDefault(); // Prevent default anchor behavior
-            const algoName = this.textContent; // Get the text of the clicked link
-            document.querySelector('.algo-name h1').textContent = algoName; // Update the algo-name
-        });
-    });
-</script>
-<script>
-    const canvas = document.getElementById("bfsCanvas");
-    const ctx = canvas.getContext("2d");
-    
-    const nodes = [
-      { id: 0, x: 100, y: 100 },
-      { id: 1, x: 250, y: 100 },
-      { id: 2, x: 400, y: 100 },
-      { id: 3, x: 100, y: 250 },
-      { id: 4, x: 250, y: 250 },
-      { id: 5, x: 400, y: 250 },
-    ];
-    
-    const edges = [
-      [0, 1], [1, 2], [0, 3],
-      [1, 4], [2, 5], [3, 4],
-      [4, 5]
-    ];
-    
-    const adjList = new Map();
-    for (let node of nodes) {
-      adjList.set(node.id, []);
-    }
-    for (let [a, b] of edges) {
-      adjList.get(a).push(b);
-      adjList.get(b).push(a); // undirected graph
-    }
-    
-    let visited = new Set();
-    let queue = [0];
-    let bfsOrder = [];
-    let step = 0;
-    
-    function drawGraph(highlighted = null) {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-    
-      // Draw edges
-      for (let [a, b] of edges) {
-        let nodeA = nodes[a];
-        let nodeB = nodes[b];
-        ctx.strokeStyle = "#aaa";
-        ctx.beginPath();
-        ctx.moveTo(nodeA.x, nodeA.y);
-        ctx.lineTo(nodeB.x, nodeB.y);
-        ctx.stroke();
-      }
-    
-      // Draw nodes
-      for (let node of nodes) {
-        ctx.beginPath();
-        ctx.arc(node.x, node.y, 20, 0, Math.PI * 2);
-        ctx.fillStyle = bfsOrder.includes(node.id) ? "#4CAF50" : "#ccc";
-        if (node.id === highlighted) {
-          ctx.fillStyle = "#2196F3";
+
+    <script>
+        function loadAlgorithm(algoName) {
+            const iframe = document.getElementById('algoFrame');
+            iframe.src = `http://127.0.0.1:5500/algorithms/${algoName}`;
+            document.querySelector('.algo-name h1').textContent = algoName.replace('.html', '').toUpperCase();
         }
-        ctx.fill();
-        ctx.strokeStyle = "#000";
-        ctx.stroke();
-        ctx.fillStyle = "#000";
-        ctx.font = "14px Arial";
-        ctx.textAlign = "center";
-        ctx.fillText(node.id, node.x, node.y + 5);
-      }
-    }
-    
-    function bfsStep() {
-      if (queue.length === 0) return;
-    
-      let current = queue.shift();
-      if (!visited.has(current)) {
-        visited.add(current);
-        bfsOrder.push(current);
-        for (let neighbor of adjList.get(current)) {
-          if (!visited.has(neighbor)) {
-            queue.push(neighbor);
-          }
-        }
-      }
-    
-      drawGraph(current);
-      step++;
-      if (queue.length > 0) {
-        setTimeout(bfsStep, 1000);
-      }
-    }
-    
-    drawGraph();
-    setTimeout(bfsStep, 1000);
     </script>
+</body>
+
 </html>
