@@ -1,4 +1,3 @@
-
 /* About-us css */
 .about-us{
     display: flex;
@@ -12,10 +11,11 @@
     justify-content: space-between;
     width:  100%;
     height:  auto;
-    /* border: 1px solid #fff; */
+
     margin-top: 50px;
 
 }
+
 .about-byte h1{
     font-style: normal;
     margin-bottom: 50px;
@@ -26,34 +26,30 @@
     height:580px;
     margin-top: 50px;
 }
-/* supervisor data section */
-.supervisor{ 
-    display: flex;
-    flex-direction:column;
-    /* border: 1px solid #fff; */
-    width:  100%;
-    height:  auto;
+
+.supervisor {
+	width: 60%;
+	margin: 0 0 0 auto;
+	padding-left: 180px;
 }
+
+
 .supervisor-title{
     margin-bottom: 50px;
 }
 
 .supervisor-title h1{
-    
     font-style: normal;
     font-size: 60px;
     font-weight: 500;
-    margin-bottom: 50px;
-    /* border: 1px solid #fff; */
-
+    margin-bottom: 50px
 }
-/* details section of supervisor */
+
 .supervisor-details{
     display:flex;
     flex-direction: row;
     width: 100%;
     height: auto;
-    /* border: 1px solid #fff; */
     align-items: center;
 }
 
@@ -76,13 +72,72 @@
 .supervisor-text p{
     margin-top: 0px;
 }
-/* team information */
 
 .team-information{
+    margin-top: 50px;
     display: flex;
     flex-direction: column;
     width:100%;
     height: auto;
-    /* border: 1px solid #fff; */
 
+}
+
+.text-center{
+    text-align: center;
+}
+
+/* Meet The Team section! */
+
+.team-container{
+    width: 100%;
+    padding: 5px;
+}
+
+.grid-3{
+    margin: 10px 0px ;
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+.team-grid div{
+    margin: 0px auto;
+    padding: 20px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #fda44c8f;
+    width: 70%;
+    border-radius: 10px;
+}
+
+.team-grid div img{
+    width:250px;
+    height:250px;
+    border-radius: 5px;
+}
+
+.team-grid div h2{
+    margin: 20px 0px;
+    font-family: "Barlow", sans-serif;
+    font-weight: 600;
+    font-size: 2rem;
+    /* font-style: italic; */
+}
+
+.team-grid div p{
+    font-size: 1.2rem;
+}
+
+
+.team-grid-down{
+    margin: 10px 0px ;
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.grid-2{
+    width: 65%;
+    display: grid;
+    grid-template-columns: auto auto;
+    margin: 30px auto;
 }
